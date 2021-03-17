@@ -33,18 +33,10 @@
       <span class="one-sec"></span>
     </div>
     <script>
-      /* let clicked2 = false;
-      document.querySelector(".my-menu-sec").addEventListener("click", () => {
-        clicked2 = !clicked2;
-
-        if (clicked2) {
-          document.querySelector(".one-sec").style.cssText =
-            "background-color: black;z-index: 1;";
-        } else {
-          document.querySelector(".one-sec").style.cssText =
-            "background-color: red";
-        }
-      }); */
+      const myMenu2 = document.querySelector(".my-menu-sec");
+      myMenu2.addEventListener("click", () => {
+        document.body.classList.toggle("my-menu-sec-open");
+      });
     </script>
     <!-- Third hamburger -->
     <div><h1>Third hamburger</h1></div>

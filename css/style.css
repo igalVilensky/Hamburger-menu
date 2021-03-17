@@ -101,7 +101,7 @@ h1 {
   position: relative;
   width: 70%;
   height: 10%;
-  background-color: rgb(255, 208, 0);
+  background-color: green;
 }
 
 .one-sec,
@@ -110,23 +110,42 @@ h1 {
   width: 3em;
   height: 5px;
   border-radius: 5px;
-  transition: transform 250ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 200ms linear;
 }
 
 .one-sec::before,
 .one-sec::after {
   content: "";
   position: absolute;
-  left: 0;
+  background-color: green;
 }
 
 .one-sec::before {
-  transform: translateY(16px);
+  bottom: 15px;
 }
 
 .one-sec::after {
-  top: 6px;
+  top: 15px;
+  background: green;
 }
+
+/* ANIMATION */
+
+.my-menu-sec-open .one-sec {
+  transform: rotate(45deg);
+  background: rgb(255, 0, 0);
+}
+
+.my-menu-sec-open .one-sec::before {
+  transform: rotate(90deg) translate(15px);
+  background: rgb(255, 0, 0);
+}
+
+.my-menu-sec-open .one-sec::after {
+  transform: rotate(90deg) translate(-15px);
+  background: rgb(255, 0, 0);
+}
+
 /* ================
    THird hamburger
    ================ */
