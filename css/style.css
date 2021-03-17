@@ -13,6 +13,9 @@ body {
   height: 100vh;
 }
 
+h1 {
+  color: white;
+}
 /* ================
    First hamburger
    ================ */
@@ -94,23 +97,36 @@ body {
 }
 
 .one-sec {
+  display: block;
+  position: relative;
   width: 70%;
   height: 10%;
-  background-color: white;
+  background-color: rgb(255, 208, 0);
 }
 
-.two-sec {
-  width: 60%;
-  height: 10%;
-  background-color: rgb(71, 255, 34);
+.one-sec,
+.one-sec::before,
+.one-sec::after {
+  width: 3em;
+  height: 5px;
+  border-radius: 5px;
+  transition: transform 250ms ease-in-out;
 }
 
-.three-sec {
-  width: 50%;
-  height: 10%;
-  background-color: rgb(18, 81, 252);
+.one-sec::before,
+.one-sec::after {
+  content: "";
+  position: absolute;
+  left: 0;
 }
 
+.one-sec::before {
+  transform: translateY(16px);
+}
+
+.one-sec::after {
+  top: 6px;
+}
 /* ================
    THird hamburger
    ================ */
