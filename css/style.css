@@ -4,30 +4,145 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #272727;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ================
+   First hamburger
+   ================ */
 .my-menu {
-  height: 60px;
-  width: 60px;
+  position: relative;
+  height: 80px;
+  width: 80px;
   background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border: 3px solid white;
 }
 
 .one {
-  width: 80%;
-  height: 20%;
-  background-color: rgb(255, 0, 0);
+  width: 50px;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.one::before,
+.one::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
 }
 
-.two {
-  width: 80%;
-  height: 20%;
+.one::before {
+  transform: translateY(-16px);
+}
+
+.one::after {
+  transform: translateY(16px);
+}
+
+/* ANIMATION */
+
+.my-menu.open .one {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.my-menu.open .one::before {
+  transform: rotate(45deg) translate(35px, -35px);
+  background: red;
+}
+
+.my-menu.open .one::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+  background: red;
+}
+
+/* ================
+   Second hamburger
+   ================ */
+
+.my-menu-sec {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border: 3px solid white;
+}
+
+.one-sec {
+  width: 70%;
+  height: 10%;
+  background-color: white;
+}
+
+.two-sec {
+  width: 60%;
+  height: 10%;
   background-color: rgb(71, 255, 34);
 }
 
-.three {
-  width: 80%;
-  height: 20%;
+.three-sec {
+  width: 50%;
+  height: 10%;
+  background-color: rgb(18, 81, 252);
+}
+
+/* ================
+   THird hamburger
+   ================ */
+
+.my-menu-third {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border: 3px solid white;
+}
+
+.one-third {
+  width: 70%;
+  height: 10%;
+  background-color: white;
+}
+
+.two-third {
+  width: 40%;
+  height: 10%;
+  background-color: rgb(71, 255, 34);
+}
+
+.three-third {
+  width: 70%;
+  height: 10%;
   background-color: rgb(18, 81, 252);
 }

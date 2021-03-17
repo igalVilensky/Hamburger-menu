@@ -10,11 +10,22 @@
   <body>
     <div class="my-menu">
       <div class="one"></div>
-      <div class="two"></div>
-      <div class="three"></div>
     </div>
 
     <script>
+      const menuBtn = document.querySelector(".my-menu");
+      let menuOpen = false;
+      menuBtn.addEventListener("click", () => {
+        if (!menuOpen) {
+          menuBtn.classList.add("open");
+          menuOpen = true;
+        } else {
+          menuBtn.classList.remove("open");
+          menuOpen = false;
+        }
+      });
+    </script>
+    <!-- <script>
       let clicked = false;
       document.querySelector(".my-menu").addEventListener("click", () => {
         clicked = !clicked;
@@ -24,6 +35,44 @@
             "background-color: black;z-index: 1;";
         } else {
           document.querySelector(".one").style.cssText =
+            "background-color: white";
+        }
+      });
+    </script> -->
+    <div class="my-menu-sec">
+      <div class="one-sec"></div>
+      <div class="two-sec"></div>
+      <div class="three-sec"></div>
+    </div>
+    <script>
+      let clicked2 = false;
+      document.querySelector(".my-menu-sec").addEventListener("click", () => {
+        clicked2 = !clicked2;
+
+        if (clicked2) {
+          document.querySelector(".one-sec").style.cssText =
+            "background-color: black;z-index: 1;";
+        } else {
+          document.querySelector(".one-sec").style.cssText =
+            "background-color: red";
+        }
+      });
+    </script>
+    <div class="my-menu-third">
+      <div class="one-third"></div>
+      <div class="two-third"></div>
+      <div class="three-third"></div>
+    </div>
+    <script>
+      let clicked3 = false;
+      document.querySelector(".my-menu-third").addEventListener("click", () => {
+        clicked3 = !clicked3;
+
+        if (clicked3) {
+          document.querySelector(".one-third").style.cssText =
+            "background-color: black;z-index: 1;";
+        } else {
+          document.querySelector(".one-third").style.cssText =
             "background-color: red";
         }
       });
